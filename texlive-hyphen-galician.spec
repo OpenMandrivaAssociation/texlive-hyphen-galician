@@ -1,5 +1,11 @@
+# revision 23092
+# category TLCore
+# catalog-ctan undef
+# catalog-date undef
+# catalog-license undef
+# catalog-version undef
 Name:		texlive-hyphen-galician
-Version:	20111102
+Version:	20111103
 Release:	1
 Summary:	Galician hyphenation patterns
 Group:		Publishing
@@ -46,6 +52,7 @@ Hyphenation patterns for Galician in T1/EC and UTF-8 encodings.
 %_texmf_language_dat_d/hyphen-galician
 %_texmf_language_def_d/hyphen-galician
 %_texmf_language_lua_d/hyphen-galician
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -54,6 +61,8 @@ Hyphenation patterns for Galician in T1/EC and UTF-8 encodings.
 %build
 
 %install
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-galician <<EOF
 %% from hyphen-galician:
