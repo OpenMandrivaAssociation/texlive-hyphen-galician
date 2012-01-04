@@ -44,12 +44,12 @@ Hyphenation patterns for Galician in T1/EC and UTF-8 encodings.
 %install
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-galician <<EOF
-%% from hyphen-galician:
+\%\% from hyphen-galician:
 galician loadhyph-gl.tex
 EOF
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-galician <<EOF
-%% from hyphen-galician:
+\%\% from hyphen-galician:
 \addlanguage{galician}{loadhyph-gl.tex}{}{2}{2}
 EOF
 mkdir -p %{buildroot}%{_texmf_language_lua_d}
