@@ -5,8 +5,8 @@
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-hyphen-galician
-Version:	20111103
-Release:	2
+Version:	20120124
+Release:	1
 Summary:	Galician hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
@@ -44,14 +44,16 @@ Hyphenation patterns for Galician in T1/EC and UTF-8 encodings.
 %install
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-galician <<EOF
-\%\% from hyphen-galician:
+\%% from hyphen-galician:
 galician loadhyph-gl.tex
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_dat_d}/hyphen-galician
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-galician <<EOF
-\%\% from hyphen-galician:
+\%% from hyphen-galician:
 \addlanguage{galician}{loadhyph-gl.tex}{}{2}{2}
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_def_d}/hyphen-galician
 mkdir -p %{buildroot}%{_texmf_language_lua_d}
 cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-galician <<EOF
 -- from hyphen-galician:
