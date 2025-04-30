@@ -1,6 +1,6 @@
 Name:		texlive-hyphen-galician
-Version:	58652
-Release:	2
+Version:	73410
+Release:	1
 Summary:	Galician hyphenation patterns
 Group:		Publishing
 URL:		https://tug.org/texlive
